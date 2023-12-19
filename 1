@@ -1,0 +1,33 @@
+import time
+
+def introduction():
+    print("Welcome to the Adventure Game!")
+    time.sleep(1)
+    print("You find yourself in a mysterious land filled with danger and adventure.")
+    time.sleep(1)
+    print("Your goal is to navigate through the challenges and reach the treasure at the end.")
+    time.sleep(1)
+    print("Let the adventure begin!")
+
+def make_choice(question, options):
+    print(question)
+    time.sleep(1)
+    print("Choose an option:")
+    for i, option in enumerate(options, 1):
+        print(f"{i}. {option}")
+
+    while True:
+        try:
+            choice = int(input("Enter the number of your choice: "))
+            if 1 <= choice <= len(options):
+                return choice
+            else:
+                print("Invalid choice. Please enter a valid number.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+def play_adventure_game():
+    introduction()
+
+    # Scenario 1
+    choice_1 = make_choice("You come across a dark cave. What do you do?", ["Enter the cave", "Continue on the path"])
